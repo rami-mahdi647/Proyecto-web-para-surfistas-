@@ -137,16 +137,9 @@ function fmt(v) {
 async function startCheckout() {
   $("subscribeBtn").disabled = true;
   try {
-    const body = await fetchJSON("/.netlify/functions/create-checkout-session", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        // Para tu caso: precio fijo de 1€ definido en server (Stripe)
-        // aquí no hace falta pasar nada
-      })
-    });
-
-    window.location.href = body.url;
+    // Usa el enlace directo (Stripe Payment Link) cuando no necesitas sesión serverless.
+    // La sesión serverless se mantiene para flujos con success_url/session_id y verificación.
+    window.location.href = "https://buy.stripe.com/3cIcN79he1vI2tZ99tdAk03";
   } catch (e) {
     alert("Error iniciando Checkout: " + e.message);
   } finally {
