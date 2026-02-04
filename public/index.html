@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Surf Santa Cruz (Tenerife) – Satélite + Tiempo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <header class="wrap">
+    <div>
+      <h1>🌊 Surf Santa Cruz (Tenerife)</h1>
+      <p class="sub">Tiempo + capa satelital (NASA) pensada para surfistas</p>
+    </div>
+
+    <div class="cta">
+      <button id="subscribeBtn" class="btn primary">Suscribirme 1€/mes</button>
+      <button id="refreshBtn" class="btn">Actualizar</button>
+    </div>
+  </header>
+
+  <main class="grid wrap">
+    <section class="card">
+      <h2>Estado de la suscripción</h2>
+      <div id="statusBox" class="status">Comprobando…</div>
+      <p class="hint">
+        Si vuelves del Checkout, se verificará automáticamente.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Tiempo (Open-Meteo)</h2>
+      <div id="weather"></div>
+    </section>
+
+    <section class="card full">
+      <div class="mapHead">
+        <h2>Mapa + Satélite</h2>
+        <div class="toggles">
+          <label class="switch">
+            <input id="satToggle" type="checkbox" checked />
+            <span>Satélite</span>
+          </label>
+        </div>
+      </div>
+      <div id="map"></div>
+      <p class="hint">
+        Capa satelital: NASA GIBS (MODIS/VIIRS). Puede variar por nubosidad y hora.
+      </p>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <small>
+      MVP demo. Para producción, añade login/DB y control multi-dispositivo.
+    </small>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="app.js"></script>
+</body>
+</html>
